@@ -80,7 +80,7 @@ class GameSenseManager:
             headline = "Remaning"
         elif isCharging is True and percent != 630 and percent != -5:
             headline = "Charging"
-        text_to_display = 'Battery Percent: ' + str(percent) + '%'
+        text_to_display = 'Battery level: ' + str(percent) + '%'
         event_data = {
             'game': self.app_name,
             'event': self.percent_event_name,
@@ -95,8 +95,8 @@ class GameSenseManager:
         self.postToEngine('/game_event', event_data)
 
     def deviceIsOff(self):
-        headline = "Mouse is off"
-        text_to_display = "Please turn on device"
+        headline = "Mouse is offline"
+        text_to_display = "Connect device"
 
         event_data = {
             'game': self.app_name,
